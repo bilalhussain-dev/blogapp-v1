@@ -1,0 +1,18 @@
+<h2>Posts</h2>
+<button>Posts: <%= @articles.count%></button>
+<% @articles.each do |article| %>
+  <div class="card card-body mb-2">
+      <div class="card-title">
+        <h3><%= article.title %></h3>
+        <p><%= article.description %></p>
+      </div>
+
+    <div class="list-item">
+       <%= link_to 'Edit', edit_article_path(article), class:'text-orange' %>
+      <%= link_to 'View', article_path(article), class:'text-dark' %>
+      <%= link_to 'Destroy', article_path(article), data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"
+      }%>
+    </div>
+  </div>
+
+<% end %>
