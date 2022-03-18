@@ -1,19 +1,23 @@
-<h2>Posts</h2>
-<%= link_to 'Home', root_path %>
-<a href="<%= new_article_path %>" class="btn btn-lg btn-success">Create an article</a>
-<button>Posts: <%= @articles.count%></button>
+<div class="container">
+  <h2>Posts</h2>
+  <%= link_to 'Home', root_path %>
+  <a href="<%= new_article_path %>" class="btn btn-lg btn-success">Create an article</a>
+  <button>Posts: <%= @articles.count%></button>
+</div>
 <% @articles.each do |article| %>
-  <div class="card card-body mb-2">
+  <div class="container">
+    <div class="card card-body mb-2">
       <div class="card-title">
         <h3><%= article.title %></h3>
         <p><%= article.description %></p>
       </div>
 
-    <div class="list-item">
-       <%= link_to 'Edit', edit_article_path(article), class:'text-orange' %>
-      <%= link_to 'View', article_path(article), class:'text-dark' %>
-      <%= link_to 'Destroy', article_path(article), data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"
-      }%>
+      <div class="list-item">
+        <%= link_to 'Edit', edit_article_path(article), class:'text-orange' %>
+        <%= link_to 'View', article_path(article), class:'text-dark' %>
+        <%= link_to 'Destroy', article_path(article), data: { turbo_method: :delete,  turbo_confirm: "Are you sure?"
+        }%>
+      </div>
     </div>
   </div>
 

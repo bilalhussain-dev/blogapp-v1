@@ -1,0 +1,8 @@
+<ul>
+  <% if obj.errors.any? %>
+    <h2>The following errors prevented the article from getting created</h2>
+    <% obj.errors.full_messages.each do |err_msg| %>
+      <li style="color: darkred; list-style: none">Error: <%= err_msg %></li>
+    <%end %>
+  <%end %>
+</ul>
