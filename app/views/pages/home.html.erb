@@ -1,5 +1,19 @@
+<style>
+  .banner{
+      width: 100%;
+      min-height: 70vh;
+  }
+  .container h1{
+      font-size: 4rem;
+      color: #fff;
+  }
+</style>
 
-<h1>Home</h1>
-<%= link_to 'About', about_path %>
-<%= link_to 'Career', career_path %>
-<%= link_to 'Start publishing', new_article_path, class:'btn btn-success btn-xl' %>
+<div class="container-fluid bg-primary banner d-flex align-items-center">
+  <div class="container">
+     <h1>Publish your stories to show the world</h1>
+     <%= link_to 'Start Publishing', new_article_path, class:'btn btn-lg btn-dark' %>
+    <%= link_to 'Create Account', '#', class:'btn btn-lg btn-success' %>
+
+  </div>
+</div>
